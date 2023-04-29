@@ -1,5 +1,4 @@
-/* Copyright 2022  CyanDuck
-*
+/*
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
@@ -19,8 +18,8 @@
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
     _QWERTY,
-    _NAVNUM,
-    _SYM,
+    _NUM,
+    _VIM,
     _FUNC,
 };
 
@@ -31,19 +30,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,----------------------------------.                      ,----------------------------------.
  * |   Q  |   W  |   E  |   R  |   T  |                      |   Y  |   U  |   I  |   O  |   P  |
  * |------+------+------+------+------|                      |------+------+------+------+------|
- * |   A  |   S  |   D  |   F  |   G  |                      |   H  |   J  |   K  |   L  |   ;  |
+ * |   A  |   S  |   D  |   F  |   G  |                      |   H  |   J  |   K  |   L  |   '  |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * |   Z  |   X  |   C  |   V  |   B  |  |CAPS |    |NUMLK|  |   N  |   M  |   ,  |   .  |   /  |
+ * | Z/CTL| X/ALT| C/GUI| V/SFT|   B  |  |  2  |    |  3  |  |   N  | M/SFT| ,/GUI| ./ALT| //CTL|
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
- *          ,-----.   ,--------------------.            ,--------------------.   ,-----. 
- *          |  1  |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |  4  |
+ *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
+ *          |  1  |   |  BS  |  TAB  |  ;  |            |L3,ESC|L2,ENT|L1,SPC|   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 [_QWERTY] = LAYOUT(
-	KC_Q,				KC_W,				KC_E,				KC_R,				KC_T,			KC_Y,	KC_U,				KC_I,				KC_O,				KC_P,
-	MT(MOD_LGUI, KC_A),	MT(MOD_LALT, KC_S),	MT(MOD_LCTL, KC_D),	MT(MOD_LSFT, KC_F),	KC_G,			KC_H,	MT(MOD_LSFT, KC_J),	MT(MOD_LCTL, KC_K),	MT(MOD_LALT, KC_L),	MT(MOD_LGUI, KC_SCLN),
-	KC_Z,				KC_X,				KC_C,				KC_V,				KC_B,			KC_N,	KC_M,				KC_COMM,			KC_DOT,				KC_SLSH,
-	KC_1,				LT(3,KC_DEL),		LT(1,KC_SPC),		KC_TAB,				KC_CAPS,		KC_NUM,	KC_ESC,				KC_BSPC,			LT(2,KC_ENT),		KC_4
+	KC_Q,			KC_W,			KC_E,			KC_R,			KC_T,		KC_Y,	    KC_U,				KC_I,				KC_O,		        KC_P,
+	KC_A,           KC_S,           KC_D,           KC_F,           KC_G,		KC_H,	    KC_J,	            KC_K,	            KC_L,	            KC_QUOT,
+	LCTL_T(KC_Z),   LALT_T(KC_X),   LGUI_T(KC_C),   LSFT_T(KC_V),   KC_B,       KC_N,       RSFT_T(KC_M),       RGUI_T(KC_COMM),    RALT_T(KC_DOT),     RCTL_T(KC_SLSH),
+	KC_1,			KC_BSPC,	    KC_TAB,	        KC_SCLN,		KC_2,	    KC_3,	    LT(3,KC_ESC),		LT(2,KC_ENT),		LT(1,KC_SPC),		KC_4
 ),
 
 /* NAVNUM
@@ -55,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
  * |      |      |  INS |      |      |  |CAPS |    |NUMLK|  |   0  |   1  |   2  |   3  |   *  |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
- *          ,-----.   ,--------------------.            ,--------------------.   ,-----. 
+ *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
  *          |  1  |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
@@ -75,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
  * |   $  |   £  |   {  |   }  |   &  |  |CAPS |    |NUMLK|  |      |      |      |      |      |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
- *          ,-----.   ,--------------------.            ,--------------------.   ,-----. 
+ *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
  *          |  1  |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
@@ -95,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
  * | Reset|      |      |      |      |  |CAPS |    |NUMLK|  |  F10 |  F1  |  F2  |  F3  |  F13 |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
- *          ,-----.   ,--------------------.            ,--------------------.   ,-----. 
+ *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
  *          |  1  |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
