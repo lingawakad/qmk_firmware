@@ -32,40 +32,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------|                      |------+------+------+------+------|
  * |   A  |   S  |   D  |   F  |   G  |                      |   H  |   J  |   K  |   L  |   '  |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * | Z/CTL| X/ALT| C/GUI| V/SFT|   B  |  |  2  |    |  3  |  |   N  | M/SFT| ,/GUI| ./ALT| //CTL|
+ * | Z/CTL| X/ALT| C/GUI| V/SFT|   B  |  |     |    |     |  |   N  | M/SFT| ,/GUI| ./ALT| //CTL|
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
- *          |  1  |   |  BS  |  TAB  |  ;  |            |L3,ESC|L2,ENT|L1,SPC|   |  4  |
+ *          |     |   |  BS  |  TAB  |  ;  |            |L3,ESC|L2,ENT|L1,SPC|   |     |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 [_QWERTY] = LAYOUT(
 	KC_Q,			KC_W,			KC_E,			KC_R,			KC_T,		KC_Y,	    KC_U,				KC_I,				KC_O,		        KC_P,
 	KC_A,           KC_S,           KC_D,           KC_F,           KC_G,		KC_H,	    KC_J,	            KC_K,	            KC_L,	            KC_QUOT,
 	LCTL_T(KC_Z),   LALT_T(KC_X),   LGUI_T(KC_C),   LSFT_T(KC_V),   KC_B,       KC_N,       RSFT_T(KC_M),       RGUI_T(KC_COMM),    RALT_T(KC_DOT),     RCTL_T(KC_SLSH),
-	KC_1,			KC_BSPC,	    KC_TAB,	        KC_SCLN,		KC_2,	    KC_3,	    LT(3,KC_ESC),		LT(2,KC_ENT),		LT(1,KC_SPC),		KC_4
+	KC_NO,			KC_BSPC,	    KC_TAB,	        KC_SCLN,		KC_NO,	    KC_NO,	    LT(3,KC_ESC),		LT(2,KC_ENT),		LT(1,KC_SPC),		KC_NO
 ),
 
-/* NAVNUM
+/* NUM
  *
  * ,----------------------------------.                      ,----------------------------------.
- * |      | PgUp |  UP  | PgDn |      |                      |   /  |   7  |   8  |   9  |   -  |
+ * |      |  -   |   =  |  Del |      |                      |   0  |   4  |   5  |   6  |   ;  |
  * |------+------+------+------+------|                      |------+------+------+------+------|
- * | Home | Left | Down | Right| End  |                      |   =  |   4  |   5  |   6  |   +  |
+ * |  `   |  [   |  ]   | CW To|      |                      |   .  |   1  |   2  |   3  |   -  |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * |      |      |  INS |      |      |  |CAPS |    |NUMLK|  |   0  |   1  |   2  |   3  |   *  |
+ * | CTL  | ALT  | GUI  | SFT  |      |  |     |    |     |  |   /  |   7  |   8  |   9  |      |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
- *          |  1  |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |  4  |
+ *          |     |   |     |       |      |            |       |    |  Held |   |     |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
-[_NAVNUM] = LAYOUT(
-	KC_NO,		KC_PGUP,		KC_UP,			KC_PGDN,	KC_NO,				KC_SLSH,	KC_7,	KC_8,		KC_9,			KC_MINS,
-	KC_HOME,	KC_LEFT,		KC_DOWN,		KC_RGHT,	KC_END,				KC_EQL,		KC_4,	KC_5,		KC_6,			KC_PLUS,
-	KC_NO,		KC_NO,			KC_INS,			KC_NO,		KC_NO,				KC_0,		KC_1,	KC_2,		KC_3,			KC_ASTR,
-	KC_1,		LT(3,KC_DEL),	LT(1,KC_SPC),	KC_TAB,		KC_CAPS,			KC_NUM,		KC_ESC,	KC_BSPC,	LT(2,KC_ENT),	KC_4
+[_NUM] = LAYOUT(
+	KC_NO,		KC_MINUS,	KC_EQUAL,	KC_DELETE,	KC_NO,  KC_0,		KC_4,	    KC_5,	    KC_6,		KC_SCLN,
+	KC_GRV, 	KC_LBRC,	KC_RBRC,	CW_TOGG,	KC_NO,	KC_DOT,		KC_1,	    KC_2,		KC_3,		KC_MINS,
+	KC_LCTL,	KC_LALT,	KC_LGUI,	KC_LSFT,	KC_NO,	KC_SLSH,    KC_7,	    KC_8,		KC_9,		KC_NO,
+	KC_NO,		KC_NO	    KC_NO	    KC_NO,		KC_NO,	KC_NO,		KC_NO,      KC_NO,      KC_NO,      KC_NO
 ),
 
-/* SYM
+/* VIM
  *
  * ,----------------------------------.                      ,----------------------------------.
  * |   %  |   @  |   [  |   ]  |   \  |                      |      |      |   ^  |      |      |
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *          |  1  |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
-[_SYM] = LAYOUT(
+[_VIM] = LAYOUT(
 	KC_PERC,	KC_AT,			KC_LBRC,		KC_RBRC,	KC_BSLS,		KC_NO,		KC_NO,		KC_CIRC,	KC_NO,			KC_NO,
 	KC_HASH,	KC_EXLM,		KC_LPRN,		KC_RPRN,	KC_PIPE,		KC_UNDS,	KC_QUOT,	KC_DQT,		KC_TILD,		KC_GRV,
 	KC_DLR,		KC_NO,			KC_LCBR,		KC_RCBR,	KC_AMPR,		KC_NO,		KC_NO,		KC_NO,		KC_NO,			KC_NO,
