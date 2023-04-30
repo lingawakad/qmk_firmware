@@ -68,21 +68,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* VIM
  *
  * ,----------------------------------.                      ,----------------------------------.
- * |   %  |   @  |   [  |   ]  |   \  |                      |      |      |   ^  |      |      |
+ * |      |      |      |      |      |                      | Home | Pg Up| CTL+U|      |CTL+W |
  * |------+------+------+------+------|                      |------+------+------+------+------|
- * |   #  |   !  |   (  |   )  |   |  |                      |   _  |   '  |   "  |   ~  |   `  |
+ * |      |      |      |      |      |                      | Left | Down |  Up  | Right| Esc  |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * |   $  |   £  |   {  |   }  |   &  |  |CAPS |    |NUMLK|  |      |      |      |      |      |
+ * |      |      |      |      |      |  |     |    |     |  |  End | Pg Dn| Ctl+D|      |      |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
- *          |  1  |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |  4  |
+ *          |     |   |     |       |      |            |      |      |      |   |     |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 [_VIM] = LAYOUT(
-	KC_PERC,	KC_AT,			KC_LBRC,		KC_RBRC,	KC_BSLS,		KC_NO,		KC_NO,		KC_CIRC,	KC_NO,			KC_NO,
-	KC_HASH,	KC_EXLM,		KC_LPRN,		KC_RPRN,	KC_PIPE,		KC_UNDS,	KC_QUOT,	KC_DQT,		KC_TILD,		KC_GRV,
-	KC_DLR,		KC_NO,			KC_LCBR,		KC_RCBR,	KC_AMPR,		KC_NO,		KC_NO,		KC_NO,		KC_NO,			KC_NO,
-	KC_1,		LT(3,KC_DEL),	LT(1,KC_SPC),	KC_TAB,		KC_CAPS,		KC_NUM,		KC_ESC,		KC_BSPC,	LT(2,KC_ENT),	KC_4
+	KC_NO,	    KC_NO,		KC_NO,		KC_NO,	    KC_NO,		KC_HOME,	KC_PGUP,	RCTL(KC_U),	    KC_NO,			RCTL(KC_W),
+	KC_NO,	    KC_NO,		KC_NO,		KC_NO,	    KC_NO,		KC_LEFT,	KC_DOWN,	KC_UP,		    KC_RIGHT,		KC_ESC,
+	KC_NO,		KC_NO,		KC_NO,		KC_NO,	    KC_NO,		KC_END,		KC_PGDN,	RCTL(KC_D),		KC_NO,			KC_NO,
+	KC_NO,		KC_NO,	    KC_NO,	    KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,	        KC_NO,	        KC_NO
 ),
 
 /* FUNC
