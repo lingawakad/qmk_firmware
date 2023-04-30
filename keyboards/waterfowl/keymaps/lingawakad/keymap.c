@@ -88,20 +88,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* FUNC
  *
  * ,----------------------------------.                      ,----------------------------------.
- * |      |      |      |      |      |                      |      |  F7  |  F8  |  F9  |  F11 |
+ * |      |      |      |      |      |                      |      |  F4  |  F5  |  F6  |  F10 |
  * |------+------+------+------+------|                      |------+------+------+------+------|
- * |      |      |      |      |      |                      |      |  F4  |  F5  |  F6  |  F12 |
+ * |      |      |      |      |      |                      |      |  F1  |  F2  |  F3  |  F11 |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * | Reset|      |      |      |      |  |CAPS |    |NUMLK|  |  F10 |  F1  |  F2  |  F3  |  F13 |
+ * | Reset|      |      |      |      |  |     |    |     |  |      |  F7  |  F8  |  F9  |  F12 |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
- *          |  1  |   | DEL | SPACE | TAB  |            |  ESC  | BS | ENTER |   |  4  |
+ *          |     |   |     |       |      |            |       |    |       |   |     |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 [_FUNC] =  LAYOUT(
-	KC_NO,	KC_NO,			KC_NO,			KC_NO,	KC_NO,			KC_NO,	KC_F7,	KC_F8,		KC_F9,			KC_F11,
-	KC_NO,	KC_NO,			KC_NO,			KC_NO,	KC_NO,			KC_NO,	KC_F4,	KC_F5,		KC_F6,			KC_F12,
-	QK_BOOT,	KC_NO,			KC_NO,			KC_NO,	KC_NO,			KC_F10,	KC_F1,	KC_F2,		KC_F3,			KC_F13,
-	KC_1,	LT(3,KC_DEL),	LT(1,KC_SPC),	KC_TAB,	KC_CAPS,		KC_NUM,	KC_ESC,	KC_BSPC,	LT(2,KC_ENT),	KC_4
+	KC_NO,	    KC_NO,		KC_NO,		KC_NO,	    KC_NO,		KC_NO,	    KC_F4,	    KC_F5	    KC_F6,		KC_F10,
+	KC_NO,	    KC_NO,		KC_NO,		KC_NO,	    KC_NO,		KC_NO,  	KC_F1,  	KC_F2,		KC_F3,		KC_F11,
+	QK_BOOT,	KC_NO,		KC_NO,		KC_NO,	    KC_NO,		KC_NO,		KC_F7,	    KC_F8,		KC_F9,		KC_F12,
+	KC_NO,	    KC_NO,	    KC_NO,	    KC_NO,		KC_NO,		KC_NO,		KC_NO,		KC_NO,      KC_NO,      KC_NO
 ),
 };
