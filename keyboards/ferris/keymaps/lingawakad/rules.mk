@@ -1,6 +1,9 @@
 # MCU name
 MCU = atmega32u4
 
+# Frood
+CONVERT_TO=promicro_rp2040
+
 # Bootloader selection
 BOOTLOADER = caterina
 
