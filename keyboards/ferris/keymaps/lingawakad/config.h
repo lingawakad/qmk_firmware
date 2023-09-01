@@ -24,16 +24,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // /fru:d/
 // Noun
 // A really amazingly together guy. E.g. “There’s a frood who really knows where his towel is.”
-#define RP2040_FLASH_GD25Q64CS
+
+// should no longer need the RP2040 defines for the rev7
+
+//#define RP2040_FLASH_GD25Q64CS
 
 // Activates the double-tap behavior
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+//#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 
 // Timeout window in ms in which the double tap can occur
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 200U
+//#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 200U
 
 // Specify an optional status LED by GPIO number which blinks when entering the bootloader
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED D5
+//#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED D5
 
 // Pick good defaults for enabling homerow modifiers
 #define TAPPING_TERM 200
