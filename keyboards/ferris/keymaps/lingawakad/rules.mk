@@ -11,7 +11,7 @@ BOOTLOADER = caterina
 #   change yes to no to disable
 #
 LTO_ENABLE = yes
-BOOTMAGIC_ENABLE = yes
+BOOTMAGIC_ENABLE = no
 MOUSEKEY_ENABLE = no
 EXTRAKEY_ENABLE = no
 CONSOLE_ENABLE = no
