@@ -39,8 +39,8 @@
       "RCTL_T(KC_SLSH)",
       "KC_BSPC",
       "LT(1,KC_TAB)",
-      "LT(2,KC_ENT)",
-      "LT(1,KC_SPC)"
+      "LT(1,KC_ENT)",
+      "LT(2,KC_SPC)"
     ],
     [
       "KC_NO",
