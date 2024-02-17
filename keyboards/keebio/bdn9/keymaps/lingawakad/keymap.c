@@ -84,9 +84,9 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     }
     else if (index == _RIGHT) {
         if (clockwise) {
-            tap_code16(KC_VOLU);
+            tap_code16(KC_WH_U);
         } else {
-            tap_code16(KC_VOLD);
+            tap_code16(KC_WH_D);
         }
     }
     return false;
